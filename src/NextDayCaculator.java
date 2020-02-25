@@ -4,13 +4,17 @@ public class NextDayCaculator {
     public static final int firstDayOfMonth = 1;
 
     public static String nextDayCalculator(int inputDay, int inputMonth, int inputYear){
-        if (inputDay== lastOfMonth)
+        int outputDay = inputDay;
+        int outputMonth = inputMonth;
+        int outputYear = inputYear;
+        if (inputDay == lastOfMonth)
         {
-            inputMonth ++;
-            inputDay = firstDayOfMonth;
-            return (inputDay) + "-" + inputMonth + "-" + inputYear;
+            outputMonth ++;
+            outputDay = firstDayOfMonth;
         }
-        int nextDay = inputDay + 1;
-        return nextDay + "-" + inputMonth + "-" + inputYear;
+        else {
+            outputDay ++;
+        }
+        return outputDay + "-" + outputMonth + "-" + outputYear;
     }
 }

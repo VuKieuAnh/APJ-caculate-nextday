@@ -26,5 +26,15 @@ class NextDayCaculatorTest {
         String expected = "1-2-2018";
         assertEquals(expected, result);
     }
+    @Test
+    @DisplayName("case 30/4/2018")
+    void testDay30Month4Year2018(){
+        int dayTest = 30;
+        int monthTest = 4;
+        int yearTest = 2018;
+        String result = NextDayCaculator.nextDayCalculator(dayTest, monthTest, yearTest);
+        String expected = "1-5-2018";
+        assertEquals(expected, result);
+    }
 
 }
