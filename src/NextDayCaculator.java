@@ -28,6 +28,8 @@ public class NextDayCaculator {
             case 11:
                 lastOfMonth = 30;
                 break;
+            case 2:
+                lastOfMonth = 28;
         }
     }
 }
