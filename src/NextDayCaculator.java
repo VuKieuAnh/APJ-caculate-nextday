@@ -7,7 +7,7 @@ public class NextDayCaculator {
         int outputMonth = inputMonth;
         int outputYear = inputYear;
 
-        if (inputDay == getLastOfMonth(inputMonth)){
+        if (inputDay == getLastOfMonth(inputMonth, inputYear)){
             outputDay = firstDayOfMonth;
             outputMonth ++;
         }
@@ -17,7 +17,7 @@ public class NextDayCaculator {
         return outputDay + "-" + outputMonth + "-" + outputYear;
     }
 
-    private static int getLastOfMonth(int inputMonth) {
+    private static int getLastOfMonth(int inputMonth, int inputYear) {
         switch (inputMonth){
             case 4:
             case 6:
@@ -25,10 +25,22 @@ public class NextDayCaculator {
             case 11:
                 return 30;
             case 2:
-                return 28;
+                 return isLeapYear(inputYear)? 29: 28;
+
         }
         return 31;
     }
 
-
+    private static boolean isLeapYear (int inputYear){
+        if(inputYear % 4 == 0){
+            if (inputYear % 100 == 0){
+                if (inputYear % 400 == 0){
+                    return true;
+                }
+                else return false;
+            }
+            else return true;
+        }
+        else return false;
+    }
 }
