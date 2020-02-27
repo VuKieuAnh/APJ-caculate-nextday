@@ -7,20 +7,18 @@ public class NextDayCaculator {
         int outputMonth = inputMonth;
         int outputYear = inputYear;
 
-        if (inputDay == getLastOfMonth(inputMonth, inputYear) && inputMonth < 12){
-            outputDay = firstDayOfMonth;
-            outputMonth ++;
-        }
-        else {
-            if (inputDay == getLastOfMonth(inputMonth, inputYear) && inputMonth == 12){
+        if (inputDay == getLastOfMonth(inputMonth, inputYear)){
+            if (inputMonth == 12){
                 outputDay = firstDayOfMonth;
                 outputMonth = 1;
                 outputYear ++;
             }
-            else
-            outputDay ++;
+            else {
+                outputDay = firstDayOfMonth;
+                outputMonth ++;
+            }
         }
-
+        else outputDay ++;
 
         return outputDay + "-" + outputMonth + "-" + outputYear;
     }
